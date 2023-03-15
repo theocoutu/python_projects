@@ -17,16 +17,6 @@ while counter23 < 5:
     counter23 = counter23 + 1
 lcd.clear()
 
-
-def add(number1,number2):
-    answer = (number1 + number2)
-    return answer
-def subtract(number1,number2):
-    answer = (number1 - number2)
-    return answer
-def multiply(number1,number2):
-    answer = (number1 * number2)
-    return answer
 def divide(number1,number2):
     try:
         answer = (number1 / number2)
