@@ -3,18 +3,9 @@ from time import sleep
 from adafruit_matrixkeypad import *
 from digitalio import DigitalInOut
 import board
-lcd.send('loadingO_O')
-counter23 = 0
-while counter23 < 5:
-    lcd.curser.blink('off')
-    
-    sleep(0.5)
-    lcd.curser.curser('left')
-    lcd.send('-')
-    sleep(0.5)
-    lcd.curser.curser('left')
-    lcd.send('O')
-    counter23 = counter23 + 1
+
+lcd.send('loading')
+
 lcd.clear()
 
 def calculate(express):
@@ -60,7 +51,9 @@ while True:
         elif st2 == '=':
             st = ''
             st2 = ''
-            calculate(field)
+            value = calculate(field)
+            lcd.send(value)
+            print(value)
             field = ''
         else:
             field = field + st2
